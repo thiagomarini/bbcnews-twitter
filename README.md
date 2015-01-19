@@ -3,8 +3,8 @@
 This is a Python app that:
 
 * Scrapes the BBC news homepage (http://www.bbc.co.uk/news/)
-* Finds the most shared articles on the "Most Popular" table
-* Searches for article's the most commom word
+* Finds the most shared articles in the "Most Popular" table
+* Searches for the article's the most commom word
 * Uses the words as hashtags on Twitter to know what is going on
 
 
@@ -18,7 +18,7 @@ In order to run this app you'll need:
 * [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 * [twython](https://twython.readthedocs.org/en/latest/)
 
-- To install via Pip run the requirements.txt file:
+- To install via pip, run the requirements.txt file:
 ```sh
 pip install -r requirements.txt
 ```
@@ -33,7 +33,7 @@ $ python run.py
 
 ### Testing the App
 
-I used unittest, so just run the tests package as unittest run.
+I used unittest, so just run the /tests package as unittest run.
 
 ### License
 
