@@ -1,7 +1,7 @@
 import unittest, bs4
 
 from config import FILE_DIR
-from models.news_page import NewsPage
+from models import NewsPage
 
 
 class NewsPageTest(unittest.TestCase):

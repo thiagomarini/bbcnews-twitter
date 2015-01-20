@@ -1,6 +1,6 @@
 ### How it works
 
-This is a Python app that:
+This is a Python 2.7 app that:
 
 * Scrapes the BBC news homepage (http://www.bbc.co.uk/news/)
 * Finds the most shared articles in the "Most Popular" table
@@ -37,7 +37,11 @@ $ python run.py
 
 ### Testing the App
 
-I used unittest, so just run the /tests package as unittest run.
+Tests depends on the mock lib:
+
+* [mock](https://docs.python.org/3/library/unittest.mock.html)
+
+I used unittest, so just run the /tests package as unittest Python run.
 
 ### License
 

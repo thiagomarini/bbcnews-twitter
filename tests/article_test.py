@@ -1,7 +1,7 @@
-import unittest
+import unittest, mock
 
 from config import FILE_DIR
-from models.article import Article
+from models import Article
 
 
 class ArticleTest(unittest.TestCase):
@@ -17,27 +17,34 @@ class ArticleTest(unittest.TestCase):
         self.a.load_story()
         
         self.assertTrue(self.a.story)
+    
+    @mock.patch('models.blwp')
+    def test_clean_story(self, mock_blwp):
         
-    def test_load_blacklisted_words(self):
-
-        self.a.load_blacklisted_words()
-        
-        self.assertEquals(len(self.a.blacklisted_words), 674)
-        
-    def test_clean_story(self):
-        # mock blaklisted words and story txt
-        self.a.blacklisted_words = ['ab', 'aw', 'gaga']
-        self.a.story = 'ab aw qw ladygaga';
+        mock_blwp.get_words.return_value = ['gaga', 'afterwards', 'wa']
+        self.a.story = 'afterwards you win';
         self.a.clean_story()
         
-        self.assertEquals(self.a.story, 'qw ladygaga')
-
+        mock_blwp.get_words.assert_called_with()
+        self.assertEquals(self.a.story, 'you win')
+    
     def test_most_used_word(self):
-        # mock blaklisted words
-        self.a.story = 'ab aw qw ladygaga ab';
+        # mock story text
+        self.a.story = 'afterwards you win and win';
         self.a.most_common_word()
+         
+        self.assertEquals(self.a.most_used_word, 'win')
         
-        self.assertEquals(self.a.most_used_word, 'ab')
+    @mock.patch('models.twitter')
+    def test_load_related_tweets(self, mock_twitter):
+        
+        mock_twitter.search.return_value = ['t1', 't2', 't3']
+        
+        self.a.most_used_word = 'hashtag'
+        self.a.load_related_tweets()
+        
+        mock_twitter.search.assert_called_with('hashtag')
+        self.assertEquals(len(self.a.tweets), 3)
 
 if __name__ == '__main__':
     unittest.main()

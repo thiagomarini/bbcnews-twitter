@@ -1,5 +1,12 @@
-from models.news_page import NewsPage
+'''
+Created on 20 Jan 2015
+
+@author: Thiago Marini
+'''
 import json
+
+from models import NewsPage
+
 
 try:
     np = NewsPage()
