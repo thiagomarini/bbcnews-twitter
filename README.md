@@ -20,7 +20,7 @@ In order to run this app you'll need:
 
 You'll also need a [Twitter API Key and Token](https://apps.twitter.com/app/7800816/keys)
 
-Change the constants in /models/twitter.py with your credentials.
+Change the constants in the Twitter class in the services.py module with your Twitter API credentials.
 
 - To install via pip, run the requirements.txt file:
 ```sh
@@ -37,7 +37,7 @@ $ python run.py
 
 ### Testing the App
 
-Tests depends on the mock lib:
+Tests depend on the mock lib:
 
 * [mock](https://docs.python.org/3/library/unittest.mock.html)
 
