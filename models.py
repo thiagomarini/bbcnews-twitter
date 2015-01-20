@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from services import blwp, twitter
 
 
-class WebPageMixIn(object):
+class WebPage(object):
     """
     Provides the fecth method to 
     other classes
@@ -26,7 +26,7 @@ class WebPageMixIn(object):
         if not self.html:
             raise Exception('Unable to fetch the webpage HTML')
 
-class NewsPage(WebPageMixIn):
+class NewsPage(WebPage):
     
     url = ''
     content = ''
@@ -76,7 +76,7 @@ class NewsPage(WebPageMixIn):
         self.json_dumps()
         return self.json_string
 
-class Article(WebPageMixIn):
+class Article(WebPage):
     
     title = ''
     story = ''

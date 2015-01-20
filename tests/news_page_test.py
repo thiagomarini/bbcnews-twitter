@@ -12,7 +12,9 @@ class NewsPageTest(unittest.TestCase):
         self.np = NewsPage()
 
     def test_load_links(self):
-        # mock the fetch
+        """
+        Integration tests for the page loading
+        """
         self.np.html = open(FILE_DIR + 'bbcnews_dummy.html', 'r')
         self.np.load_links()
         

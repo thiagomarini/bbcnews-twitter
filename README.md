@@ -1,6 +1,6 @@
 ### How it works
 
-This is a Python 2.7 app that:
+This is a Python 2.7 script that:
 
 * Scrapes the BBC news homepage (http://www.bbc.co.uk/news/)
 * Finds the most shared articles in the "Most Popular" table
@@ -13,7 +13,7 @@ This is a Python 2.7 app that:
 
 ### Requirements
 
-In order to run this app you'll need:
+In order to run the script you'll need:
 
 * [beautifulsoup4](http://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 * [twython](https://twython.readthedocs.org/en/latest/)
@@ -27,7 +27,7 @@ Change the constants in the Twitter class in the services.py module with your Tw
 pip install -r requirements.txt
 ```
 
-### Running the App
+### Running the script
 
 Call the run.py file from the console:
 
@@ -35,7 +35,7 @@ Call the run.py file from the console:
 $ python run.py
 ```
 
-### Testing the App
+### Unit testing
 
 Tests depend on the mock lib:
 

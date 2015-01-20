@@ -5,6 +5,9 @@ from models import Article
 
 
 class ArticleTest(unittest.TestCase):
+    """
+    Unit tests for the articles methods
+    """
     
     a = None
 
